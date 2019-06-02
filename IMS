@@ -1,0 +1,289 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.6.22-log
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema ims
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ ims;
+USE ims;
+
+--
+-- Table structure for table `ims`.`dmail`
+--
+
+DROP TABLE IF EXISTS `dmail`;
+CREATE TABLE `dmail` (
+  `no` int(10) NOT NULL AUTO_INCREMENT,
+  `message` text,
+  `sub` varchar(2000) NOT NULL,
+  `rname` varchar(2000) NOT NULL,
+  `field` varchar(25) NOT NULL,
+  `date` varchar(25) NOT NULL,
+  `sname` varchar(25) NOT NULL,
+  `status` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`no`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ims`.`dmail`
+--
+
+/*!40000 ALTER TABLE `dmail` DISABLE KEYS */;
+INSERT INTO `dmail` (`no`,`message`,`sub`,`rname`,`field`,`date`,`sname`,`status`) VALUES 
+ (7,'aGlpaWlpaS4uLi4uLg0K','krupal','demo@imail.py','inbox','04/04/17 16:15:24','demo@imail.py',1),
+ (8,'UHJldmlvdXMgbWFpbCBpbmZvOi0NClNlbmRlciBJRDotIGRlbW9AaW1haWwucHkNClN1YmplY3Q6LSAgaGVsbG8NCk1lc3NhZ2U6LSAgaGVsbG8NCg0KDQpUaW1lOiAgMDQvMDQvMTcgMTM6NDM6MzENCm1lc3NhZ2Ugb2YgcmVwbHkgbWFpbD0+aGlpaWk=','hello',' demo@imail.py ','inbox','04/04/17 13:54:48','admin@imail.py',1),
+ (9,'YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo=','welcome','demo@imail.py','inbox','03/23/17 14:57:40','demo@imail.py',1),
+ (10,'aGVsbG8=','hello','demo@imail.py','inbox','04/08/17 12:11:36','admin@imail.py',1),
+ (11,'aGVsbG8NCg==','hello','demo@imail.py','inbox','04/04/17 13:59:01','admin@imail.py',1),
+ (12,'aGVsbGxsbGxsbw==','add hello','demo@imail.py','inbox','04/04/17 14:09:28','admin@imail.py',1),
+ (13,'aGx3','ashu','demo@imail.py','inbox','04/07/17 09:03:43','admin@imail.py',1),
+ (14,'bWFpbA==','compose','demo@imail.py','inbox','04/07/17 18:35:44','admin@imail.py',1),
+ (15,'UHJldmlvdXMgbWFpbCBpbmZvOi0NClNlbmRlciBJRDotIGRlbW9AaW1haWwucHkNClN1YmplY3Q6LSAgYQ0KTWVzc2FnZTotICBmbWdmamhnZm5oZmhmaGZoZw0KVGltZTogIDA0LzA4LzE3IDExOjMyOjEwDQptZXNzYWdlIG9mIHJlcGx5IG1haWw9Pg0KDQpyZXBseQ==','a',' demo@imail.py ','inbox','04/08/17 11:35:11','sagar@imail.py',1);
+INSERT INTO `dmail` (`no`,`message`,`sub`,`rname`,`field`,`date`,`sname`,`status`) VALUES 
+ (17,'TVNHRw==','SUBJECT','admin@imail.py','inbox','04/08/17 12:38:06','nilesh@imail.py',1);
+/*!40000 ALTER TABLE `dmail` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `ims`.`draft`
+--
+
+DROP TABLE IF EXISTS `draft`;
+CREATE TABLE `draft` (
+  `no` int(10) NOT NULL AUTO_INCREMENT,
+  `message` text,
+  `sub` varchar(2000) NOT NULL,
+  `field` varchar(25) NOT NULL,
+  `date` varchar(25) NOT NULL,
+  `sname` varchar(25) NOT NULL,
+  PRIMARY KEY (`no`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ims`.`draft`
+--
+
+/*!40000 ALTER TABLE `draft` DISABLE KEYS */;
+INSERT INTO `draft` (`no`,`message`,`sub`,`field`,`date`,`sname`) VALUES 
+ (1,'aGRoZGp6ams=','hahah','inbox','04/08/17 11:53:51','demo@imail.py');
+/*!40000 ALTER TABLE `draft` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `ims`.`group_info`
+--
+
+DROP TABLE IF EXISTS `group_info`;
+CREATE TABLE `group_info` (
+  `no` int(10) NOT NULL AUTO_INCREMENT,
+  `Group_name` varchar(25) NOT NULL,
+  `Members_id` varchar(2000) NOT NULL,
+  `date` varchar(25) DEFAULT NULL,
+  `Group_Admin` varchar(25) NOT NULL,
+  PRIMARY KEY (`no`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ims`.`group_info`
+--
+
+/*!40000 ALTER TABLE `group_info` DISABLE KEYS */;
+INSERT INTO `group_info` (`no`,`Group_name`,`Members_id`,`date`,`Group_Admin`) VALUES 
+ (11,'hello','admin@imail.py,demo@imail.py','04/04/17 15:49:17','demo@imail.py'),
+ (12,'IMS','ashuay123@imail.py,demo@imail.py,admin@imail.py','04/07/17 09:18:54','admin@imail.py'),
+ (13,'clg','admin@imail.py,demo@imail.py,nidhimem@imail.py','04/12/17 15:11:22','nidhimem@imail.py');
+/*!40000 ALTER TABLE `group_info` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `ims`.`group_mail`
+--
+
+DROP TABLE IF EXISTS `group_mail`;
+CREATE TABLE `group_mail` (
+  `GM_no` int(10) NOT NULL AUTO_INCREMENT,
+  `Group_no` int(10) NOT NULL,
+  `message` text,
+  `sub` varchar(2000) NOT NULL,
+  `rname` varchar(2000) NOT NULL,
+  `date` varchar(25) NOT NULL,
+  `sname` varchar(25) NOT NULL,
+  PRIMARY KEY (`GM_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ims`.`group_mail`
+--
+
+/*!40000 ALTER TABLE `group_mail` DISABLE KEYS */;
+INSERT INTO `group_mail` (`GM_no`,`Group_no`,`message`,`sub`,`rname`,`date`,`sname`) VALUES 
+ (12,10,'aGVsbG8NCg==','hello','admin@imail.py,demo@imail.py','04/04/17 15:41:04','demo@imail.py'),
+ (13,10,'UHJldmlvdXMgbWFpbCBpbmZvOi0NClNlbmRlciBJRDotIGRlbW9AaW1haWwucHkNClN1YmplY3Q6LSAgaGVsbG8NCk1lc3NhZ2U6LSAgaGVsbG8NCg0KDQpUaW1lOiAgMDQvMDQvMTcgMTU6NDE6MDQNCm1lc3NhZ2Ugb2YgcmVwbHkgbWFpbD0+DQpoZWxsbw==','hello','admin@imail.py,demo@imail.py','04/04/17 15:45:25','demo@imail.py'),
+ (14,11,'aGVsbw==','hello','admin@imail.py,demo@imail.py','04/04/17 15:59:57','admin@imail.py'),
+ (15,12,'d2VsY29tZSBhbGw=','hello ','ashuay123@imail.py,demo@imail.py,admin@imail.py','04/07/17 09:20:29','admin@imail.py'),
+ (16,12,'UHJldmlvdXMgbWFpbCBpbmZvOi0NClNlbmRlciBJRDotIGFkbWluQGltYWlsLnB5DQpTdWJqZWN0Oi0gIGhlbGxvIA0KTWVzc2FnZTotICB3ZWxjb21lIGFsbA0KVGltZTogIDA0LzA3LzE3IDA5OjIwOjI5DQptZXNzYWdlIG9mIHJlcGx5IG1haWw9PnR5','hello ','ashuay123@imail.py,demo@imail.py,admin@imail.py','04/07/17 09:20:55','ashuay123@imail.py'),
+ (17,12,'aW4gY2xhc3M=','hello','ashuay123@imail.py,demo@imail.py,admin@imail.py','04/11/17 14:33:41','admin@imail.py');
+INSERT INTO `group_mail` (`GM_no`,`Group_no`,`message`,`sub`,`rname`,`date`,`sname`) VALUES 
+ (18,13,'YWxsbA==','helloo','admin@imail.py,demo@imail.py,nidhimem@imail.py','04/12/17 15:11:58','admin@imail.py'),
+ (19,13,'UHJldmlvdXMgbWFpbCBpbmZvOi0NClNlbmRlciBJRDotIGFkbWluQGltYWlsLnB5DQpTdWJqZWN0Oi0gIGhlbGxvbw0KTWVzc2FnZTotICBhbGxsDQpUaW1lOiAgMDQvMTIvMTcgMTU6MTE6NTgNCm1lc3NhZ2Ugb2YgcmVwbHkgbWFpbD0+DQoNCmhpaWk=','helloo','admin@imail.py,demo@imail.py,nidhimem@imail.py','04/12/17 15:12:26','nidhimem@imail.py');
+/*!40000 ALTER TABLE `group_mail` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `ims`.`label`
+--
+
+DROP TABLE IF EXISTS `label`;
+CREATE TABLE `label` (
+  `no` int(10) NOT NULL AUTO_INCREMENT,
+  `label_name` varchar(25) NOT NULL,
+  `user_id` varchar(50) NOT NULL,
+  `date` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`no`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ims`.`label`
+--
+
+/*!40000 ALTER TABLE `label` DISABLE KEYS */;
+INSERT INTO `label` (`no`,`label_name`,`user_id`,`date`) VALUES 
+ (1,'msg','parth','03/03/17 14:09:18'),
+ (2,'test','admin@imail.py','03/04/17 13:58:37'),
+ (3,'hello','student@imail.py','03/07/17 05:07:18'),
+ (4,'hello','demo@imail.py','03/22/17 02:49:00'),
+ (5,'hello','admin@imail.py','04/04/17 14:15:15'),
+ (6,'pooja mem','demo@imail.py','04/11/17 14:37:49'),
+ (7,'clg','nidhimem@imail.py','04/12/17 15:10:25');
+/*!40000 ALTER TABLE `label` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `ims`.`mailcon`
+--
+
+DROP TABLE IF EXISTS `mailcon`;
+CREATE TABLE `mailcon` (
+  `no` int(10) NOT NULL AUTO_INCREMENT,
+  `message` text,
+  `sub` varchar(2000) NOT NULL,
+  `rname` varchar(2000) NOT NULL,
+  `field` varchar(25) NOT NULL,
+  `date` varchar(25) NOT NULL,
+  `sname` varchar(25) NOT NULL,
+  `status` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`no`)
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ims`.`mailcon`
+--
+
+/*!40000 ALTER TABLE `mailcon` DISABLE KEYS */;
+INSERT INTO `mailcon` (`no`,`message`,`sub`,`rname`,`field`,`date`,`sname`,`status`) VALUES 
+ (1,'aGVsbG8NCg==','hello','admin@imail.py','test','04/04/17 13:43:31','demo@imail.py',1),
+ (13,'aGVsbG8=','hello','admihbjkbkjbk','inbox','04/06/17 15:23:30','admin@imail.py',0),
+ (17,'d2VsY29tZQ==','hello','ashuay123@imail.py','inbox','04/07/17 09:14:05','admin@imail.py',1),
+ (22,'d2VsY29tZSBpbiBJTVMuLi4u','hello','divyesh@imail.py','inbox','04/08/17 07:10:38','admin@imail.py',1),
+ (24,'Zm1nZmpoZ2ZuaGZoZmhmaGc=','a','sagar@imail.py','inbox','04/08/17 11:32:10','demo@imail.py',1),
+ (26,'aA==','hg','demo@imail.py','inbox','04/08/17 11:36:51','sagar@imail.py',0),
+ (27,'Z2ZtaGZodG12','hello','sagar@imail.py','inbox','04/08/17 11:41:14','demo@imail.py',0),
+ (30,'bmlsZXNoIHNpcg==','hello','nilesh@imail.py','inbox','04/08/17 12:40:02','admin@imail.py',1),
+ (31,'UHJldmlvdXMgbWFpbCBpbmZvOi0NClNlbmRlciBJRDotIGFkbWluQGltYWlsLnB5DQpTdWJqZWN0Oi0gIGhlbGxvDQpNZXNzYWdlOi0gIG5pbGVzaCBzaXINClRpbWU6ICAwNC8wOC8xNyAxMjo0MDowMg0KbWVzc2FnZSBvZiByZXBseSBtYWlsPT4NCg0KDQp0aGlzIGlzIHJlcGxheSBtYWls','hello',' admin@imail.py ','inbox','04/08/17 12:40:36','nilesh@imail.py',1),
+ (32,'dmlyYWo=','hello','hetal@imail.py','inbox','04/08/17 13:57:29','kavita@imail.py',1);
+INSERT INTO `mailcon` (`no`,`message`,`sub`,`rname`,`field`,`date`,`sname`,`status`) VALUES 
+ (33,'UHJldmlvdXMgbWFpbCBpbmZvOi0NClNlbmRlciBJRDotIGthdml0YUBpbWFpbC5weQ0KU3ViamVjdDotICBoZWxsbw0KTWVzc2FnZTotICB2aXJhag0KVGltZTogIDA0LzA4LzE3IDEzOjU3OjI5DQptZXNzYWdlIG9mIHJlcGx5IG1haWw9Pg0KZGhhbnJhag==','hello',' kavita@imail.py ','inbox','04/08/17 13:57:53','hetal@imail.py',1),
+ (34,'aG93IHIgdQ==','hello','demo@imail.py','pooja mem','04/11/17 14:38:10','pooja@imail.py',1),
+ (35,'c2Zkc2Y=','hello','admin@imail.py','inbox','04/11/17 14:39:30','demo@imail.py',1),
+ (36,'d2VsY29tZSBpbiBJTVMuLi4u','hello','admin@imail.py','inbox','04/08/17 07:10:58','divyesh@imail.py',1),
+ (37,'d2VsY29tZQ==','hello','nidhimem@imail.py','clg','04/12/17 15:08:34','admin@imail.py',1),
+ (38,'UHJldmlvdXMgbWFpbCBpbmZvOi0NClNlbmRlciBJRDotIGFkbWluQGltYWlsLnB5DQpTdWJqZWN0Oi0gIGhlbGxvDQpNZXNzYWdlOi0gIHdlbGNvbWUNClRpbWU6ICAwNC8xMi8xNyAxNTowODozNA0KbWVzc2FnZSBvZiByZXBseSBtYWlsPT4NCg0KaGpraGtqaGs=','hello',' admin@imail.py ','inbox','04/12/17 15:09:21','nidhimem@imail.py',0),
+ (40,'d2VsY29tZQ==','hello','demo@imail.py','inbox','04/12/17 15:10:00','nidhimem@imail.py',1);
+INSERT INTO `mailcon` (`no`,`message`,`sub`,`rname`,`field`,`date`,`sname`,`status`) VALUES 
+ (42,'c2Zkc2Zkc2Y=','hello ','nidhimem@imail.py','inbox','04/12/17 15:13:52','admin@imail.py',1),
+ (43,'UHJldmlvdXMgbWFpbCBpbmZvOi0NClNlbmRlciBJRDotIGFkbWluQGltYWlsLnB5DQpTdWJqZWN0Oi0gIGhlbGxvIA0KTWVzc2FnZTotICBzZmRzZmRzZg0KVGltZTogIDA0LzEyLzE3IDE1OjEzOjUyDQptZXNzYWdlIG9mIHJlcGx5IG1haWw9Pg0KDQoNCmdjaGpnZHNnZmhkc2hnDQoNCg0Ka2pua25ram5r','hello ',' admin@imail.py ','inbox','04/12/17 15:15:39','nidhimem@imail.py',0);
+/*!40000 ALTER TABLE `mailcon` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `ims`.`session`
+--
+
+DROP TABLE IF EXISTS `session`;
+CREATE TABLE `session` (
+  `session_id` varchar(19) NOT NULL,
+  `User_id` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`session_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ims`.`session`
+--
+
+/*!40000 ALTER TABLE `session` DISABLE KEYS */;
+INSERT INTO `session` (`session_id`,`User_id`) VALUES 
+ ('452176820725','demo@imail.py'),
+ ('695384638530','admin@imail.py');
+/*!40000 ALTER TABLE `session` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `ims`.`user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `No` int(100) NOT NULL AUTO_INCREMENT,
+  `User_id` varchar(100) DEFAULT NULL,
+  `First_name` varchar(50) DEFAULT NULL,
+  `Last_name` varchar(50) DEFAULT NULL,
+  `Gender` varchar(10) DEFAULT NULL,
+  `Email_addr` varchar(100) DEFAULT NULL,
+  `Bdate` varchar(25) DEFAULT NULL,
+  `Id_no` varchar(20) DEFAULT NULL,
+  `Mobile_no` varchar(15) DEFAULT NULL,
+  `Designation` varchar(20) DEFAULT NULL,
+  `Account_type` varchar(10) DEFAULT NULL,
+  `Password` varchar(100) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`No`),
+  UNIQUE KEY `User_id` (`User_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ims`.`user`
+--
+
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` (`No`,`User_id`,`First_name`,`Last_name`,`Gender`,`Email_addr`,`Bdate`,`Id_no`,`Mobile_no`,`Designation`,`Account_type`,`Password`,`status`) VALUES 
+ (2,'admin@imail.py','Satyam','Agarwal','Male','679agarsatya@gmail.com','03/12/1998','679','7567974691','admin','admin','YWRtaW4=',1),
+ (29,'demo@imail.py','demo','example','male','demo@imail.com','12/5/1995','1','8974526312','admin','user','ZGVtbw==',1),
+ (35,'sagar@imail.py','null','null','null','null','null','null','null','null','user','c2FnYXI=',1),
+ (38,'jp@imail.py','null','null','null','null','null','null','null','null','user','anA=',1),
+ (39,'nilesh@imail.py','null','null','null','null','null','null','null','null','user','bmlsZXNo',1),
+ (40,'kavita@imail.py','null','null','null','null','null','null','null','null','user','a2F2aXRh',1),
+ (42,'pooja@imail.py','null','null','null','null','null','null','null','null','user','MTIz',1),
+ (43,'nidhimem@imail.py','nidhimem','null','null','null','null','null','null','null','user','MTIz',1);
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
